@@ -10,7 +10,7 @@ from race.circuit_race import CircuitRace
 name = input("Enter Player Name: ")
 player = Player(name)
 
-# Choose car using factory
+# car using factory
 car_choice = input("Choose Car (Toyota/Subaru/Porsche/Ferrari): ")
 car = CarFactory.get_car(car_choice)
 
@@ -20,11 +20,11 @@ turbo = Alpine()
 car.set_engine(engine)
 car.set_turbo(turbo)
 
-# Choose track using factory
+# track using factory
 track_choice = input("Choose Track (BlueMoon/BBRaceway/Spa): ")
 track = TrackFactory.get_track(track_choice)
 
-# Choose race type
+# race type
 race_type = input("Choose Race Type (Sprint/Circuit): ").lower()
 
 if race_type == "sprint":
