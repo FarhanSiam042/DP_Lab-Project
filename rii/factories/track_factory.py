@@ -6,9 +6,11 @@ class TrackFactory:
 
     @staticmethod
     def get_track(choice):
-        if choice == "BlueMoon":
+        choice = choice.lower()
+        if choice == "bluemoon":
             return BlueMoon()
-        elif choice == "BBRaceway":
+        elif choice == "bbraceway":
             return BBRaceway()
-        elif choice == "Spa":
+        elif choice == "spa":
             return Spa()
+        return None

@@ -1,6 +1,6 @@
-from cars.car import Car
+from cars.roadster import Roadster
 
 
-class Ferrari812(Car):
+class Ferrari812(Roadster):
     def carInfo(self):
-        print("Ferrari 812 - Superfast")
+        print("Ferrari 812 - Roadster")

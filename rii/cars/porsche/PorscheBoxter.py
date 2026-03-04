@@ -1,6 +1,6 @@
-from cars.car import Car
+from cars.roadster import Roadster
 
 
-class PorscheBoxster(Car):
+class PorscheBoxster(Roadster):
     def carInfo(self):
-        print("Porsche Boxster - Convertible")
+        print("Porsche Boxster - Roadster")

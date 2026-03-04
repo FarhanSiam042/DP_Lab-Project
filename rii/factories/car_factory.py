@@ -7,11 +7,13 @@ class CarFactory:
 
     @staticmethod
     def get_car(choice):
-        if choice == "Toyota":
+        choice = choice.lower()
+        if choice == "toyota":
             return ToyotaGR86()
-        elif choice == "Subaru":
+        elif choice == "subaru":
             return SubaruBRZ()
-        elif choice == "Porsche":
+        elif choice == "porsche":
             return PorscheBoxster()
-        elif choice == "Ferrari":
+        elif choice == "ferrari":
             return Ferrari812()
+        return None

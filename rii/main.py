@@ -5,39 +5,33 @@ from strategy.engine_strategy import V6, V8, V12
 from strategy.turbo_strategy import Alpine, Cummins, Honeywell
 from race.sprint_race import SprintRace
 from race.circuit_race import CircuitRace
-from decorator.SemaNOS import SemaNOS
-from decorator.ResonacNOS import ResonacNOS
 
+# Singleton Player instance
 name = input("Enter Player Name: ")
 player = Player(name)
 
-car_choice = input("Choose Car: ")
+# Choose car using factory
+car_choice = input("Choose Car (Toyota/Subaru/Porsche/Ferrari): ")
 car = CarFactory.get_car(car_choice)
 
+# Set engine and turbo strategies
 engine = V8()
 turbo = Alpine()
-
 car.set_engine(engine)
 car.set_turbo(turbo)
 
-# Apply NOS decorator
-nos_choice = input("Add NOS boost? (Sema/Resonac/None): ").lower()
-if nos_choice == "sema":
-    car = SemaNOS(car)
-    print("Sema NOS installed!")
-elif nos_choice == "resonac":
-    car = ResonacNOS(car)
-    print("Resonac NOS installed!")
-
-track_choice = input("Choose Track: ")
+# Choose track using factory
+track_choice = input("Choose Track (BlueMoon/BBRaceway/Spa): ")
 track = TrackFactory.get_track(track_choice)
 
-race_type = input("Choose Race Type (Sprint/Circuit): ")
+# Choose race type
+race_type = input("Choose Race Type (Sprint/Circuit): ").lower()
 
-if race_type == "Sprint":
+if race_type == "sprint":
     race = SprintRace()
 else:
     race = CircuitRace()
 
+# Execute race (NOS selection happens during pitStop in the race)
 race.race(car, track)
-race.race(car, track)
+

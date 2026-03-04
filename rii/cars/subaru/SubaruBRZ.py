@@ -1,6 +1,6 @@
-from cars.car import Car
+from cars.coupe import Coupe
 
 
-class SubaruBRZ(Car):
+class SubaruBRZ(Coupe):
     def carInfo(self):
         print("Subaru BRZ - Sports Coupe")
